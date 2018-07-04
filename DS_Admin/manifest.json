@@ -1,0 +1,14 @@
+{
+  "name": "DS_Admin Extension",
+  "description" : "Gives access to DealerSpike Admin Panel Developed & Designed by Karl/Michael",
+  "version": "1.0",
+
+  "manifest_version": 2,
+
+  "browser_action": {
+    "default_popup": "dsadmin.html",
+    "default_icon": "dsadmin_icon.png"
+  },
+   "permissions": [ "activeTab" ]
+
+}
