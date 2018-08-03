@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 //################################################//
     
-    function checkSite(){
-        
-        var hold = document.getElementsByClassName("footer-DS");
-        
-        return (hold.length > 0)?true:false;
-        
+    function checkSite(){        
+       return document.cookie.indexOf("ASPSESSIONID")!=-1;    
     }
 
     chrome.tabs.executeScript({
