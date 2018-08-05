@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+//this is a test comment
   var checkPageButton = [].slice.call(document.querySelectorAll(".admin-buttons"));
   var is_our_site;
 
