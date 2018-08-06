@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  var checkPageButton = [].slice.call(document.querySelectorAll(".admin-buttons"));
-  var is_our_site;
+  var checkPageButton = [].slice.call(document.querySelectorAll(".admin-buttons")); 
+  var siteEdit = document.getElementById('siteEditButton');
 
   //######## ADD BUTTON ID AND LINK #############//
   var buttons= {
       "mainButton":"/admin",
-      "siteEditButton":"/useradmin.asp?page=xMetaAdmin",
       "invManButton":"/useradmin.asp?page=xinvmanager",
       "configButton":"/useradmin.asp?page=xConfig"
-    };
+    };//"siteEditButton":"/useradmin.asp?page=xMetaAdmin",
 //################################################//
 
     chrome.tabs.getSelected(null, function(tab) {
@@ -21,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 chrome.tabs.create({ url: new_url,index:tab.index+1 }); 
                               
              }, false);           
+        });
+        siteEdit.addEventListener('click',()=>{
+            chrome.tabs.executeScript({
+                code: 'fetch("/useradmin.asp?page=xMetaAdmin");setTimeout(function(){window.location.reload();},500);' //argument here is a string but function.toString() returns function's code
+            }, (results) => {
+                //Here we have just the innerHTML and not DOM structure
+                  console.log(results[0]);
+            });
+            
         });
     });
 }, false);   
