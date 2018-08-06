@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
           is_our_site = results[0];
     });
 
+
     chrome.tabs.getSelected(null, function(tab) {
         checkPageButton.addEventListener('click', function() { 
             if(is_our_site){
