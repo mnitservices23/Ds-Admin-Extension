@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         siteEdit.addEventListener('click',()=>{
             chrome.tabs.executeScript({
-                code: 'fetch("/useradmin.asp?page=xMetaAdmin");setTimeout(function(){window.location.reload();},500);' //argument here is a string but function.toString() returns function's code
+                code: 'fetch("/useradmin.asp?page=xMetaAdmin").then((res)=>window.location.reload());' //argument here is a string but function.toString() returns function's code
             }, (results) => {
                 //Here we have just the innerHTML and not DOM structure
                   console.log(results[0]);
