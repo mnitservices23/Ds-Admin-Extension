@@ -1,0 +1,16 @@
+{
+  "name": "DS_Admin Extension",
+  "description" : "Gives access to DealerSpike Admin Panel Hotkeys Developed & Designed by Karl/Michael",
+  "version": "3.2",
+
+  "manifest_version": 2,
+
+  "browser_action": {
+    "default_popup": "dsadmin.html",
+    "default_icon": "ext-icon.png"
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+   "permissions": [ "activeTab","tabs" ],
+"web_accessible_resources": ["dsadmin.html","ext_icon.png"]
+
+}
